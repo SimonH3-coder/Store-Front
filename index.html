@@ -3,9 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Store Front</title>
     <link rel="stylesheet" href="Assets/css/main.css" />
-    <script src="Assets/js/site.js"></script>
+    <script src="Assets/js/site.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- GLOBAL HEADER -->
+    <header class="header">
+      <h2>Logo</h2>
+      <h3>Headline</h3>
+      <!-- search bar -->
+      <form action="#">
+        <label for="search"><img src="Assets/img/img/magnifying-glass-solid.svg" alt="magnifying-glass-solid" /></label>
+        <input type="search" placeholder="Søg" id="search" />
+      </form>
+      <!-- INDKØBSKURV -->
+      <nav id="kurv">
+        <ul>
+          <li>
+            <a href="">
+              <img src="Assets/img/img/Icon-Basket.svg" alt="Icon-Basket" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="javascript:void(0)">Forside</a></li>
+        <li><a href="javascript:void(0)">Produkter</a></li>
+        <li><a href="javascript:void(0)">Forhandler</a></li>
+        <li><a href="javascript:void(0)">Information</a></li>
+        <li><a href="javascript:void(0)">Om os</a></li>
+        <li><a href="javascript:void(0)">Kontakt</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="produkter">
+        <h2>Produkter</h2>
+        <div class="product-container">
+          <!-- Products will be dynamically inserted here -->
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
 </html>
