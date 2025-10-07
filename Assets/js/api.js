@@ -1,4 +1,4 @@
-export async function getpProducts() {
+export async function getProducts() {
   let url = "https://dummyjson.com/products";
   let res = await fetch(url);
   let data = await res.json();
@@ -7,6 +7,13 @@ export async function getpProducts() {
 
 export async function getCategories() {
   let url = "https://dummyjson.com/products/categories";
+  let res = await fetch(url);
+  let data = await res.json();
+  return data;
+}
+
+export async function getProductById(id) {
+  let url = `https://dummyjson.com/products/${id}`;
   let res = await fetch(url);
   let data = await res.json();
   return data;
