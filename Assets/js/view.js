@@ -1,14 +1,15 @@
 export function renderProductCard(product) {
   // Get the container for products
   let productContainer = document.getElementById("productContainer");
+  if (!productContainer) return;
 
-  // Creat a new card
+  // Create a new card
   let card = document.createElement("div");
   let cardTitle = document.createElement("h2");
   let cardImage = document.createElement("img");
   let cardPrice = document.createElement("p");
 
-  // Inser details into the card
+  // Insert details into the card
   cardTitle.innerText = product.title;
   cardImage.src = product.thumbnail;
   cardPrice.innerText = product.price;
@@ -23,31 +24,10 @@ export function renderProductCard(product) {
 // Get the container for product details
 
 export function renderProductDetails(product) {
-  // Get the container for products
   let productContainer = document.getElementById("productContainer");
-  if (!productContainer) {
-    console.error("Product container kunne ikke findes");
-    return;
-  }
+  if (!productContainer) return;
 
-  //   productContainer.innerHTML = productstoShow
-  //     .slice(0, 3)
-  //     .map(
-  //       (product) => `
-  //     <div class= "product-item" data-id="${product.id}">
-  //     <img src="${product.thumbnail}" alt="${product.title}" loading="lazy">
-  //     <h3>${product.title}</h3>
-  //     <p class="price">$${product.price}</p>
-  //     <p class="description">${product.description.substring(0, 100)}...</p>
-  //     <p class="rating">Rating: ${product.rating} / 5</p>
-  //     button class= "add-to-cart-btn" onclick="addToCart(${product.id})">
-  //     Tilføj til kurv
-  //     <button>
-  //     </div>
-  //     `
-  //     )
-  //     .join("");
-  // }
+  productContainer.innerHTML = ""; // Clear previous details
 
   let details = document.createElement("div");
   let detailsTitle = document.createElement("h2");
@@ -59,7 +39,7 @@ export function renderProductDetails(product) {
   detailsImage.src = product.thumbnail;
   detailsImage.alt = product.title;
   detailsDescription.innerText = product.description;
-  detailsPrice.innerText = product.price + "kr";
+  detailsPrice.innerText = product.price + "kr.";
 
   details.appendChild(detailsImage);
   details.appendChild(detailsTitle);
@@ -68,3 +48,23 @@ export function renderProductDetails(product) {
 
   productContainer.appendChild(details);
 }
+export function renderProductCard(cartItems) {
+  //Get the container for products items
+  let productContainer = document.getElementById("productContainer");
+  if (!productContainer) return;
+
+  productContainer.innerHTML = ""; // Clear previous content
+  
+  //create cart header
+  let cartHeader = document.createElement("h2");
+  cartHeader.innerText = "Indkøbskurv";
+  productContainer.appendChild(cartHeader);
+
+  //check if cart is empty
+  if (!cartItems || cartItems.length === 0) {
+    let emptyMessage = document.createElement("p");
+    emptyMessage.innerText = "Din indkøbskurv er tom";
+    emptyMessage.className = "empty-cart-message";
+    productContainer.appendChild(emptyMessage);
+    return;
+  }
