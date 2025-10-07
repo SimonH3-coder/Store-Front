@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Store Front</title>
     <link rel="stylesheet" href="Assets/css/main.css" />
-    <script src="Assets/js/site.js" defer></script>
+    <script src="./Assets/js/main.js" type="module"></script>
   </head>
   <body>
     <!-- GLOBAL HEADER -->
@@ -38,13 +38,10 @@
         <li><a href="javascript:void(0)">Kontakt</a></li>
       </ul>
     </nav>
-    <main>
-      <section id="produkter">
-        <h2>Produkter</h2>
-        <div class="product-container">
-          <!-- Products will be dynamically inserted here -->
-        </div>
-      </section>
+    <main id="mainContainer">
+      <nav>
+        <section id="productContainer"></section>
+      </nav>
     </main>
 
     <footer></footer>
