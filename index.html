@@ -9,9 +9,24 @@
   </head>
   <body>
     <!-- GLOBAL HEADER -->
-    <header class="header">
-      <h2>Logo</h2>
-      <h3>Headline</h3>
+   <div class="header">
+    <p class="logo">Logo</p>
+    <h2>Headline</h2>
+    <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="cart-count">0</p></div>
+   </div>
+   <div class="container">
+    <div id="root"></div>
+    <div class="sidebar">
+      <div class="head"><p>My cart</p></div>
+      <div id="cartItem">Your cart is empty</div>
+      <div class="foot">
+        <h3>Total</h3>
+        <h2 id="cart-total">0 DKK</h2>
+
+      </div>
+
+    </div>
+   </div>
       <!-- search bar -->
       <form action="#">
         <label for="search"><img src="Assets/img/img/magnifying-glass-solid.svg" alt="magnifying-glass-solid" /></label>
@@ -27,7 +42,7 @@
           </li>
         </ul>
       </nav>
-    </header>
+    </div>
     <nav>
       <ul>
         <li><a href="javascript:void(0)">Forside</a></li>
@@ -44,6 +59,8 @@
       <nav>
         <section id="productContainer"></section>
       </nav>
+
+      <button class="btn-danger">Slet</button>
     </main>
 
     <footer></footer>

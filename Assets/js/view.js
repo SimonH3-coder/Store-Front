@@ -51,10 +51,3 @@ export function renderProductDetails(product) {
 
   mainContainer.appendChild(details);
 }
-
-export function renderCart(cartItems) {
-  let mainContainer = document.getElementById("mainContainer");
-  if (!mainContainer) return;
-
-  mainContainer.innerHTML = "";
-}
