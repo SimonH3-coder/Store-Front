@@ -1,31 +1,34 @@
 export function renderProductCard(product) {
-  // Get the container for products
-  let productContainer = document.getElementById("productContainer");
-  if (!productContainer) return;
+  // Price, description, thumbnail & title skal renderes
+  let mainContainer = document.getElementById("mainContainer");
+  if (!mainContainer) return;
 
-  // Create a new card
   let card = document.createElement("div");
   let cardTitle = document.createElement("h2");
   let cardImage = document.createElement("img");
   let cardPrice = document.createElement("p");
+  let cardDescription = document.createElement("p");
 
-  // Insert details into the card
   cardTitle.innerText = product.title;
   cardImage.src = product.thumbnail;
-  cardPrice.innerText = product.price;
+  cardImage.alt = product.title;
+  cardPrice.innerText = product.price + " DKK";
+  cardDescription.innerText = product.description;
 
   card.appendChild(cardImage);
   card.appendChild(cardTitle);
+  card.appendChild(cardDescription);
   card.appendChild(cardPrice);
 
-  productContainer.appendChild(card);
+  card.addEventListener("click", () => renderProductDetails(product));
+  mainContainer.appendChild(card);
 }
 
 // Get the container for product details
 
 export function renderProductDetails(product) {
-  let productContainer = document.getElementById("productContainer");
-  if (!productContainer) return;
+  let mainContainer = document.getElementById("mainContainer");
+  if (!mainContainer) return;
 
   productContainer.innerHTML = ""; // Clear previous details
 
@@ -46,25 +49,10 @@ export function renderProductDetails(product) {
   details.appendChild(detailsDescription);
   details.appendChild(detailsPrice);
 
-  productContainer.appendChild(details);
+  mainContainer.appendChild(details);
 }
-export function renderProductCard(cartItems) {
-  //Get the container for products items
-  let productContainer = document.getElementById("productContainer");
-  if (!productContainer) return;
 
-  productContainer.innerHTML = ""; // Clear previous content
-  
-  //create cart header
-  let cartHeader = document.createElement("h2");
-  cartHeader.innerText = "Indkøbskurv";
-  productContainer.appendChild(cartHeader);
-
-  //check if cart is empty
-  if (!cartItems || cartItems.length === 0) {
-    let emptyMessage = document.createElement("p");
-    emptyMessage.innerText = "Din indkøbskurv er tom";
-    emptyMessage.className = "empty-cart-message";
-    productContainer.appendChild(emptyMessage);
-    return;
-  }
+export function renderCart(cartItems) {
+  let mainContainer = document.getElementById("mainContainer");
+  if (!mainContainer) return;
+}
