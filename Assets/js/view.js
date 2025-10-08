@@ -55,4 +55,6 @@ export function renderProductDetails(product) {
 export function renderCart(cartItems) {
   let mainContainer = document.getElementById("mainContainer");
   if (!mainContainer) return;
+
+  mainContainer.innerHTML = "";
 }
