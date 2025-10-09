@@ -1,3 +1,21 @@
+export function renderCart(cartItems) {
+  let mainContainer = document.getElementById("mainContainer");
+  if (!mainContainer) return;
+
+  mainContainer.innerHTML = ""; // Clear previous cart items
+  cartItems.forEach((item) => {
+    let cartItem = document.createElement("div");
+    cartItem.className = "cart-item";
+    let itemTitle = document.createElement("h3");
+    let itemPrice = document.createElement("p");
+    itemTitle.innerText = item.title;
+    itemPrice.innerText = item.price + " DKK";
+    cartItem.appendChild(itemTitle);
+    cartItem.appendChild(itemPrice);
+    mainContainer.appendChild(cartItem);
+  });
+}
+
 const product = [
   {
     id: 0,
