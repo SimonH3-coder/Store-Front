@@ -1,0 +1,118 @@
+//import
+
+@use "partials-header.scss";
+@use "partials-footer.scss";
+@use "partials-style.scss";
+@use "partials-product.scss";
+@use "partials-cart.scss";
+@use "partials-mixins.scss" as *;
+@use "partials-variables.scss" as *;
+
+// Variables (define these properly)
+$font-family: "Arial, sans-serif"; // Replace with your actual font
+$primary-color: #333; // Replace with actual color
+$secondary-color: #eee;
+$secondary-color3: #ccc;
+$secondary-color4: #999;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-size: 18px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  width: 70%;
+  margin-bottom: 30px;
+}
+
+#root {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.sidebar {
+  width: 40%;
+  border-radius: 5px;
+  background-color: $secondary-color;
+  margin-left: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.img-box {
+  width: 100%;
+  height: 180%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.images {
+  max-width: 90%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bottom {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 110px;
+}
+
+button:hover {
+  background-color: $secondary-color3;
+}
+
+.row-img {
+  width: 50px;
+  height: 50px;
+  max-width: 43px;
+  max-height: 43px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-trash:hover {
+  cursor: pointer;
+  color: $secondary-color4;
+}
+
+#mainContainer {
+  background-color: $primary-color;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

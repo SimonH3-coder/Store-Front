@@ -26,3 +26,10 @@ export async function searchProducts(query) {
   let data = await res.json();
   return data;
 }
+
+export async function getSearchResults(query) {
+  let url = `https://dummyjson.com/products/search?q=${query}`;
+  let res = await fetch(url);
+  let data = await res.json();
+  return data;
+}

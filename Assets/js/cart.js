@@ -1,4 +1,4 @@
-export function renderCart(cartItems) {
+export function renderCart(cart) {
   let mainContainer = document.getElementById("mainContainer");
   if (!mainContainer) return;
 
@@ -63,7 +63,8 @@ document.getElementById("root").innerHTML = categories.map((item) => {
         </div>`
   );
 });
-join("");
+
+JSON.stringify(cart);
 
 var cart = [];
 
@@ -106,3 +107,15 @@ function displaycart(a) {
       .join("");
   }
 }
+
+// // localStorage
+// let myDataName = "data";
+
+// export default function saveData(data) {
+//   localStorage.setItem(myDataName, JSON.stringify(data));
+// }
+// export function localStorage.getItem(myDataName) {
+//   console.log(data);
+// }
+//  return JSON.parse(data);
+// }

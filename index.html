@@ -9,40 +9,29 @@
   </head>
   <body>
     <!-- GLOBAL HEADER -->
-   <div class="header">
-    <p class="logo">Logo</p>
-    <h2>Headline</h2>
-    <div class="cart"><img src="Assets/img/img/Icon-Basket.svg" alt="Icon-Basket" class="fa-solid fa-cart-shopping"><p id="cart-count">0</p></div>
-   </div>
-   <div class="container">
-    <div id="root"></div>
-    <div class="sidebar">
-      <div class="head"><p>My cart</p></div>
-      <div id="cartItem">Your cart is empty</div>
-      <div class="foot">
-        <h3>Total</h3>
-        <h2 id="cart-total">0 DKK</h2>
-
-      </div>
-
-    </div>
-   </div>
+    <div class="header">
+      <p class="logo">Logo</p>
+      <h2>Headline</h2>
       <!-- search bar -->
-      <form action="#">
-        <label for="search"><img src="Assets/img/img/magnifying-glass-solid.svg" alt="magnifying-glass-solid" /></label>
-        <input type="search" placeholder="Søg" id="search" />
-      </form>
-      <!-- INDKØBSKURV -->
-      <nav id="kurv">
-        <ul>
-          <li>
-            <a href="">
-              <img src="Assets/img/img/Icon-Basket.svg" alt="Icon-Basket" />
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <input type="search" id="search-bar" />
+      <div class="cart">
+        <img src="Assets/img/img/Icon-Basket.svg" alt="Icon-Basket" class="fa-solid fa-cart-shopping" />
+        <p id="cart-count">0</p>
+      </div>
     </div>
+    <div class="container">
+      <div id="root"></div>
+      <div class="sidebar">
+        <div class="head"><p>My cart</p></div>
+        <div id="cartItem">Your cart is empty</div>
+        <div class="foot">
+          <h3>Total</h3>
+          <h2 id="cart-total">0 DKK</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
     <nav>
       <ul>
         <li><a href="javascript:void(0)">Forside</a></li>
@@ -56,11 +45,9 @@
     <main>
       <section id="mainContainer"></section>
 
-      <nav>
+      <!-- <nav>
         <section id="productContainer"></section>
-      </nav>
-
-      <button class="btn-danger">Slet</button>
+      </nav> -->
     </main>
 
     <footer></footer>
