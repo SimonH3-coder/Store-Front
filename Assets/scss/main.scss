@@ -1,10 +1,10 @@
 //import
 
-@use "partials-header.scss";
-@use "partials-footer.scss";
-@use "partials-style.scss";
-@use "partials-product.scss";
-@use "partials-cart.scss";
+@use "partials-header.scss" as *;
+@use "partials-footer.scss" as *;
+@use "partials-style.scss" as *;
+@use "partials-product.scss" as *;
+@use "partials-cart.scss" as *;
 @use "partials-mixins.scss" as *;
 @use "partials-variables.scss" as *;
 

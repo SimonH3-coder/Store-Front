@@ -3,6 +3,7 @@ import { getCategories } from "./api.js";
 import { renderProductCard } from "./view.js";
 import { renderProductDetails } from "./view.js";
 import { getSearchResults } from "./api.js";
+import { renderRandomProducts } from "./view.js";
 
 await getProducts().then((data) => {
   let products = data.products;
@@ -27,3 +28,5 @@ searchBar.addEventListener("input", async (event) => {
     renderProductCard(product);
   });
 });
+
+await renderRandomProducts();

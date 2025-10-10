@@ -1,3 +1,5 @@
+import { getProducts } from "./api.js";
+
 export function renderProductCard(product) {
   // Price, description, thumbnail & title skal renderes
   let mainContainer = document.getElementById("mainContainer");
@@ -30,7 +32,7 @@ export function renderProductDetails(product) {
   let mainContainer = document.getElementById("mainContainer");
   if (!mainContainer) return;
 
-  productContainer.innerHTML = ""; // Clear previous details
+  mainContainer.innerHTML = ""; // Clear previous details
 
   let details = document.createElement("div");
   let detailsTitle = document.createElement("h2");
@@ -50,4 +52,23 @@ export function renderProductDetails(product) {
   details.appendChild(detailsPrice);
 
   mainContainer.appendChild(details);
+}
+
+export async function renderRandomProducts() {
+  // Hent data
+  //Vælg 3 tildfældige items fra data- arrayet
+  let data = await getProducts();
+  console.log(data);
+  let value1 = Math.floor(Math.random() * 30);
+  let value2 = Math.floor(Math.random() * 30);
+  let value3 = Math.floor(Math.random() * 30);
+  console.log(data.products[value1], data.products[value2], data.products[value3]);
+
+  let randomArray = [data.products[value1], data.products[value2], data.products[value3]];
+
+  randomArray.forEach((item) => {
+    renderProductCard(item);
+  });
+
+  //data.products[value]
 }

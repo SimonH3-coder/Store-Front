@@ -1,3 +1,36 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.navigation .nav-list {
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navigation a {
+  text-decoration: none;
+  color: #000000;
+  padding: 10px;
+}
+.navigation a:hover {
+  background-color: darkblue;
+  color: white;
+}
+.navigation ul:last-of-type {
+  justify-content: flex-end;
+  background-color: darkblue;
+  color: #333;
+}
+.navigation ul:last-of-type img {
+  width: 1rem;
+  filter: invert(1);
+}
+.navigation ul:last-of-type li {
+  display: flex;
+  padding: 0 0.3rem;
+}
+
 .header {
   height: 80px;
   width: 70%;
@@ -12,7 +45,7 @@
 .header .logo {
   font-size: 30px;
   font-weight: bold;
-  color: white;
+  color: black;
 }
 
 .head {
@@ -21,17 +54,55 @@
   height: 40px;
   padding: 10px;
   margin-bottom: 20px;
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
 }
 
-.foot {
+footer {
   display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-  padding: 10px;
-  border-top: 1px solid #333;
+  flex-direction: column;
+  margin-top: 100px;
+  background-color: darkblue;
+  padding-top: 100px;
+}
+footer .footer-main {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+footer .footer-main img {
+  width: 60px;
+}
+footer figure {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: 40px 0;
+}
+footer nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+footer nav ul {
+  list-style: none;
+  margin: 5rem 2rem;
+}
+footer nav li {
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  gap: 10px;
+  margin-left: 5rem;
+  padding: 0;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+}
+footer h3 {
+  margin-bottom: 2rem;
+  margin-left: 10px;
 }
 
 .cart {
